@@ -95,7 +95,7 @@ def extract_domains(emails):
 # Skip scanning for domains returned by this function
 def get_restricted_domains():
     # We are looking for custom domains so filtering well known services
-    domains_to_filter = ['gmail.com']
+    domains_to_filter = ['gmail.com', 'microsoft.com', 'google.com']
     return domains_to_filter
 
 
@@ -238,13 +238,16 @@ if __name__ == "__main__":
     is_available = {}
     for package in packages:
         domains = get_domains_from_package_deep(package[0], package[1], depth=args.depth)
-        is_available[package] = get_available_domains(domains)
-    print("Finally, we are finished. Lets check what we found:")
-    for package in is_available:
-        for domain in is_available[package]:
-            print(f'{BColors.BOLD}{domain}{BColors.OKGREEN} is available for purchase{BColors.ENDC}')
-            if domain in DOMAINS_GLOBAL:
-                print(f'Mailserver on this domain contains following emails: {DOMAINS_GLOBAL[domain]}')
+        is_available[package] = domains
+    print("\nFinally, we are finished. Lets check what we found:\n")
+    if len(is_available) == 0:
+        print(f'{BColors.FAIL}Nothing!{BColors.ENDC}')
+    else:
+        for package in is_available:
+            for domain in is_available[package]:
+                print(f'{BColors.BOLD}{domain}{BColors.OKGREEN} is available for purchase{BColors.ENDC}')
+                if domain in DOMAINS_GLOBAL:
+                    print(f'Mailserver on this domain contains following emails: {DOMAINS_GLOBAL[domain]}')
     exit(0)
     # print(DOMAINS_GLOBAL)
     # domains = load_raw_domains('domains.txt')
