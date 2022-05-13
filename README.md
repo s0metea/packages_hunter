@@ -17,3 +17,6 @@ The idea was inspired by the post located here: https://thehackerblog.com/zero-d
   `python3 main.py -p vue:2.6.11 --depth 100`
 - Explore all package.json files located in your bitbucket repo (Don't forget to add bitbucket_token in main.py):
   `python3 main.py -fb --depth 100`
+## Project status
+
+[![CodeQL](https://github.com/s0metea/packages_hunter/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/s0metea/packages_hunter/actions/workflows/codeql-analysis.yml)
