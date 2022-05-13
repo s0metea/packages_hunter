@@ -7,7 +7,7 @@
     #   # #   #     # #  #  #   # #     #     #          # #   #    #   #   #   #     #     
     #   # #   #     # #   # #   # #     #####  ####     #   # #     #   #   #   ##### #                                            
 
-Explore npm packages to find maintainers with expired domains
+Explore npm packages to find maintainers with expired domains.
 The idea was inspired by the post located here: https://thehackerblog.com/zero-days-without-incident-compromising-angular-via-expired-npm-publisher-email-domains-7kZplW4x/
 
 ## Usage
