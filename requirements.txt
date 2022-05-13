@@ -1,0 +1,4 @@
+tld
+requests
+semver
+pymsteams
